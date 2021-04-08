@@ -1,14 +1,14 @@
 
 <template>
   <div class="card">
-    <h3>{{ title }}</h3>
+    <h3>{{$t ('app.title1') }}</h3>
 
     <img :src="imgUrl" />
     
     <div class="card__footer">
       <div class="card__meta">
         
-        <p class="price">{{$n(price, "currency")}}</p>
+        <p class="price">{{$n(price, "currency", changeLocale($i18n.locale))}}</p>
         <p>{{ $d(new Date(addedOn), "short", changeLocale($i18n.locale))}}</p>
       </div>
 
@@ -25,8 +25,9 @@ console.log("Active locale: ", i18n.locale)
 export default {
   
   methods: {
-    changeLocale(locale) {
+    changeLocale() {
       if (this.$i18n.locale === "en") {
+        console.log(i18n.locale);
         return "en-US" 
       } else {
         return "ar-EG"

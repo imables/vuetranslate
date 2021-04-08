@@ -20,7 +20,7 @@ import EventBus from "@/EventBus"
 
 export default {
   data: () => ({
-    isLoading: true
+    isLoading: true,
   }),
   mounted() {
     EventBus.$on("i18n-load-start", () => (this.isLoading = true))

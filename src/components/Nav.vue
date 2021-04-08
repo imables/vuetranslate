@@ -5,10 +5,11 @@
 
       <LocalizedLink to="/">{{ $t("nav.home") }}</LocalizedLink>
       <LocalizedLink to="/about">{{ $t("nav.about") }}</LocalizedLink>
+      <LocalizedLink to="/shop">{{ $t("nav.shop") }}</LocalizedLink>
     </div>
 
     <div class="nav__end">
-      <p class="user-greeting">{{ $t("user_greeting", { name: "Adam" }) }}</p>
+      <p class="user-greeting">{{ $t("user_greeting", { name: "Jakob" }) }}</p>
 
       <LocaleSwitcher />
     </div>
