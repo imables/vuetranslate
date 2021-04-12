@@ -16,7 +16,7 @@ export function getChoiceIndex(choice, choicesLength) {
   }
 
   // this === VueI18n instance, so the locale property also exists here
-  if (this.locale !== "ar") {
+  if (this.locale !== "ar" || "de") {
     return defaultChoiceIndex.apply(this, [choice, choicesLength])
   }
 

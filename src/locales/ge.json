@@ -1,0 +1,23 @@
+{
+    "app": {
+      "title": "Kaffee",
+      "title1": "Artikel"
+    },
+    "nav": {
+      "home": "Zuhause",
+      "about": "Die Info",
+      "shop": "Geschäft"
+    },
+    "user_greeting": "Hallo, {name}",
+    "footer": "Gebaut mit Vue und Vue I18n {0} Angetrieben von Kaffee",
+    "card": {
+      "added": "Hinzugefügt",
+      "likes": "Niemand ❤️ das noch 😕 | {n} Person ❤️ this | {n} Leute ❤️ das"
+    },
+    "about": {
+      "title": "Über uns",
+      "para1": "Lorem ipsum dolor sitzen amet consectetur adipisicing elit. Nesciunt nobis sapiente quos officia vitae. Minus blanditiis doloremque Fehler bei consectetur magni nam voluptatem pariatur! Itaque deleniti delectus odio accumantium quas?",
+      "para2": "Non eius beatae dolorum impedit enim repudiandae nulla ipsum animi. Ullam qui libero possimus aliquam, praesentium ipsam omnis, ab aut culpa reprehenderit odio sapiente ex molestias maiores? Temporibus, molestiae eum!",
+      "para3": "Consectetur illo nobis, nemo notwendige quos corporis voluptiert enim totam itaque ratione und ad iste korrupti eaque ex quas Commodi. Perspiciatis vel quo consectetur quas nulla explicabo harum ratione konsequatur."
+    }
+  }

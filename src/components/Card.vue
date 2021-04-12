@@ -29,8 +29,10 @@ export default {
       if (this.$i18n.locale === "en") {
         console.log(i18n.locale);
         return "en-US" 
-      } else {
+      } else if (this.$i18n.locale === "ar"){
         return "ar-EG"
+      } else {
+        return "ge-DE"
       }
     }
   },

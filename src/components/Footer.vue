@@ -8,5 +8,8 @@
 .footer {
   text-align: center;
   margin-bottom: 1rem;
+  display: block;
+  clear: both;
+  position: relative;
 }
 </style>

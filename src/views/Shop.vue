@@ -1,7 +1,7 @@
 <template>
   <div class="shop">
     <h1 v-t="'app.title'" />
-
+  
     <ShowItems />
   </div>
 </template>

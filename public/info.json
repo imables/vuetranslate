@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "title": "oioi",
+      "price": 40.00,
+      "qty": 1,
+      "imgUrl": "/img/battlecreek-coffee-roasters-_1wDmr4dtuk-unsplash.jpg",
+      "addedOn": "01-01-01",
+      "likes": 5
+    },
+    {
+      "id": 2,
+      "title": "hello",
+      "price": 60.00,
+      "qty": 2,
+      "imgUrl": "/img/battlecreek-coffee-roasters-_1wDmr4dtuk-unsplash.jpg",
+      "addedOn": "01-01-01",
+      "likes": 5
+    },
+    {
+      "id": 2,
+      "title": "dogger",
+      "price": 80.00,
+      "qty": 2,
+      "imgUrl": "/img/battlecreek-coffee-roasters-_1wDmr4dtuk-unsplash.jpg",
+      "addedOn": "01-01-01",
+      "likes": 5
+    }
+  ]
+  

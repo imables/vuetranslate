@@ -1,26 +1,20 @@
 <template>
 <div>
   <div class="cards">
-    {{cart.length}} in cart
-    <!-- {{"total"}} -->
-    <!-- <Shopping v-bind="card" v-for="card in cards" :key="card.id" /> -->
-      <Shopping
+    
+      <Shopping className="products"
+      
               v-on:addItemToCart="addItemToCart"
       ></Shopping>
   </div>
 
+    
   <div class="col-md-5 my-5">
+    {{cart.length}} in cart
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-        <Cart v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
+    
+    
+        <Cart class="cart1" v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
   </div>
 
   </div>
@@ -62,10 +56,28 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+/* .cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   float: left;
+} */
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  float: left;
+  margin: 0 auto;
+
 }
+
+.cart1{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  float: left;
+  margin: 0 auto;
+}
+
 </style>

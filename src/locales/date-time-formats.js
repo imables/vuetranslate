@@ -4,6 +4,9 @@ const dateTimeFormats = {
   },
   'ar-EG': {
     short: { year: "numeric", month: "long", day: "numeric" }
+  },
+  'de-DE': {
+    short: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   }
 }
 

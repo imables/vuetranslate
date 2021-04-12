@@ -1,16 +1,21 @@
 <template>
 <div>
-  <div>
-    <h1>Your Cart</h1>
+  <div class="container notification is-primary container-max-width-100px">
+    <h1 class="cartTitle">Your Cart</h1>
     <div class="dingus">
+      <h4 class="cart text-center box">total: {{$n(total(), "currency", changeLocale($i18n.locale))}}</h4>
       <div v-for="(prop, index) in cart" :key="index">
+        
+        <div class="current container notification is-primary container-max-width-100px">
         <h3>{{$t('app.title1')}}</h3>
         <img :src="prop.image" />
         <div>{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
         <button v-on:click="removeItemFromCart(prop)">Remove from cart</button>
+        </div>
       </div>
-      <h4 class="text-center">total: {{$n(total(), "currency", changeLocale($i18n.locale))}}</h4>
+      
     </div>
+    
   </div>
   <div>
     <!-- <span>Checkout = {"total()"}</span> -->
@@ -51,7 +56,35 @@ export default {
 
 <style>
 
-.dingus {
+/* .dingus {
   float: left;
+} */
+
+/* .cart {
+  
+   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  margin-left: 100px;
+  
+  
 }
+
+.cartTitle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
+  margin-left: 100px;
+}
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  float: left;
+  margin-left: 50px;
+} */
+
 </style>

@@ -1,12 +1,13 @@
   <template>
   <div>
     
-    <div class="products">
-      <h1>Products</h1>
+    <div class="products container notification is-primary container-max-width-100px">
+      <h1 class="product title">Products</h1>
       <div v-for="(prop, index) in items" :key="index">
-        <h3>{{$t('app.title1')}}</h3>
+        <h3 class="">{{$t('app.title1')}}</h3>
         <div class="cost">{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
         <button v-on:click="addItemToCart(prop)">Add to cart</button>
+        
       </div>
     </div>
   </div>
@@ -59,7 +60,21 @@ export default {
 
 <style>
 
-.products {
+/* .products {
   float: left;
+  margin: 0 auto;
+  font-size: 15px;
+} */
+
+.line {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
 }
+
 </style>
+

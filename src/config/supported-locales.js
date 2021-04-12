@@ -1,4 +1,5 @@
 export default {
   en: "English",
-  ar: "عربي (Arabic)"
+  ar: "عربي (Arabic)",
+  ge: "Deutsche (German)",
 }
