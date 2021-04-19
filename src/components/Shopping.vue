@@ -1,13 +1,15 @@
   <template>
   <div>
     
-    <div class="products container notification is-primary container-max-width-100px">
-      <h1 class="product title">Products</h1>
+    <h1 class="product title ">Products</h1>
+    <div class="products container notification has-background-primary-light is-flex is-flex-wrap-wrap is-justify-content-space-evenly is-family-monospace">
+      
       <div v-for="(prop, index) in items" :key="index">
-        <h3 class="">{{$t('app.title1')}}</h3>
-        <div class="cost">{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
-        <button v-on:click="addItemToCart(prop)">Add to cart</button>
-        
+        <div card card-content content>
+        <h3 class="pl-5">{{$t('app.title1')}}</h3>
+        <div class="cost pl-5">{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
+        <button class="buttons button is-warning is-light" v-on:click="addItemToCart(prop)">Add to cart</button>
+        </div>
       </div>
     </div>
   </div>
@@ -44,10 +46,13 @@ export default {
       if (this.$i18n.locale === "en") {
         console.log(i18n.locale);
         return "en-US" 
-      } else {
+      } else if (this.$i18n.locale === "ar"){
         return "ar-EG"
+      } else {
+        return "ge-DE"
       }
     },
+  
 
     addItemToCart(prop) {
       this.$emit("addItemToCart", prop);

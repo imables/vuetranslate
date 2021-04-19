@@ -1,18 +1,17 @@
 
 <template>
-  <div class="card">
-    <h3>{{$t ('app.title1') }}</h3>
+  <div class="cardcontent">
+    <h3 class="is-family-monospace ">{{$t ('app.title1') }}</h3>
 
     <img :src="imgUrl" />
     
-    <div class="card__footer">
-      <div class="card__meta">
+    <div class="card__footer pr-3 pb-3">
+      <div class="card__meta pt-5">
         
-        <p class="price">{{$n(price, "currency", changeLocale($i18n.locale))}}</p>
-        <p>{{ $d(new Date(addedOn), "short", changeLocale($i18n.locale))}}</p>
+        <p class="is-flex is-justify-content-center is-family-monospace">{{$n(price, "currency", changeLocale($i18n.locale))}}</p>
+        <!-- <p>{{ $d(new Date(addedOn), "short", changeLocale($i18n.locale))}}</p> -->
+        <p class="is-flex is-justify-content-center pt-4 is-family-monospace">{{$t('app.description')}}</p>
       </div>
-
-      <p class="likes">{{$tc("card.likes", likes)}}</p>
     </div>
   </div>
 </template>
@@ -43,18 +42,17 @@ export default {
     price: Number,
     imgUrl: String,
     addedOn: String,
-    likes: Number
   }
 }
 </script>
 
 <style scoped>
-.card {
-  width: 30%;
+.cardcontent {
+  width: 27%;
   margin-bottom: 2rem;
-  border: 1px solid #f2f2f2;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  border: 3px solid #f2f2f2;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(255, 0, 0, 0.1);
 }
 
 h3 {
@@ -70,31 +68,15 @@ img {
   width: 100%;
 }
 
-.card__footer {
-  text-align: center;
-  margin: 0;
-  padding: 0.5em;
-}
-
-.card__meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
 p {
   margin: 0;
   font-size: 14px;
 }
 
 .price {
-  margin-left: 0.5rem;
+  
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.likes {
-  text-align: end;
-  margin-top: 0.5rem;
-}
 </style>

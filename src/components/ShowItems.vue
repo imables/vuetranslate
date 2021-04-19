@@ -1,22 +1,15 @@
 <template>
-<div>
-  <div class="cards">
-    
+<div class="is-family-monospace">
+  <div class="cards card card-content content">
       <Shopping className="products"
-      
               v-on:addItemToCart="addItemToCart"
       ></Shopping>
   </div>
-
-    
   <div class="col-md-5 my-5">
     {{cart.length}} in cart
     <br />
-    
-    
         <Cart class="cart1" v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
   </div>
-
   </div>
 </template>
 
@@ -37,18 +30,23 @@ export default {
   
 
   methods: {
+    changeLocale() {
+      if (this.$i18n.locale === "en") {
+        console.log(i18n.locale);
+        return "en-US" 
+      } else if (this.$i18n.locale === "ar"){
+        return "ar-EG"
+      } else {
+        return "ge-DE"
+      }
+    },
+  
     addItemToCart(prop) {
       this.cart.push(prop);
     },
     removeItemFromCart(prop) {
       this.cart.splice(this.cart.indexOf(prop), 1);
     },
-    // total() {
-    //   let cart = this.cart.length;
-      
-    //     return cart.reduce ((acc, cart) => acc + cart)
-      
-    // }
   },
 
   components: { Shopping, Cart },
@@ -56,13 +54,6 @@ export default {
 </script>
 
 <style scoped>
-/* .cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  float: left;
-} */
-
 .products {
   display: flex;
   justify-content: space-between;

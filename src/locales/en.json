@@ -1,7 +1,8 @@
 {
   "app": {
-    "title": "Coffeeeeee",
-    "title1": "item"
+    "title": "The Food Basket",
+    "title1": "Item",
+    "description": "Healthy Foods"
   },
   "nav": {
     "home": "Home",
@@ -9,11 +10,8 @@
     "shop": "Shop"
   },
   "user_greeting": "Hello, {name}",
-  "footer": "Built with Vue and Vue I18n{0}Powered by  coffee",
-  "card": {
-    "added": "Added",
-    "likes": "Nobody ❤️ this yet 😕 | {n} person ❤️ this | {n} people ❤️ this"
-  },
+  "footer": "Demo web app internationalisation",
+  
   "about": {
     "title": "About Us",
     "para1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nobis sapiente quos officia vitae. Minus blanditiis doloremque error at consectetur magni nam voluptatem pariatur! Itaque deleniti delectus odio accusantium quas?",

@@ -1,8 +1,6 @@
 <template>
-  <div class="nav">
+  <div class="navbar">
     <div class="nav__start">
-      <img alt="Vue logo" src="../assets/logo-circle-sm.png" />
-
       <LocalizedLink to="/">{{ $t("nav.home") }}</LocalizedLink>
       <LocalizedLink to="/about">{{ $t("nav.about") }}</LocalizedLink>
       <LocalizedLink to="/shop">{{ $t("nav.shop") }}</LocalizedLink>
@@ -21,35 +19,37 @@ import LocaleSwitcher from "@/components/LocaleSwitcher"
 import LocalizedLink from "@/components/LocalizedLink"
 
 export default {
-  components: { LocaleSwitcher, LocalizedLink }
+  components: { LocaleSwitcher, LocalizedLink },
 }
 </script>
 
 <style scoped>
-.nav {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: left;
+  text-align: center;
   padding: 1rem;
-  color: #fff;
-  background-color: #3d536a;
+  color: rgb(0, 0, 0);
+  background-color: #aeff9e;
 }
 
 .nav__start,
 .nav__end {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  justify-content: center;
 }
 
 .nav img {
   margin-right: 1rem;
 }
 
-.nav a {
+.navbar a {
   margin-right: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 

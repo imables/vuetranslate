@@ -1,5 +1,5 @@
 <template>
-  <div class="cards">
+  <div class="displayedcards">
     <Card v-bind="card" v-for="card in cards" :key="card.id" />
   </div>
 </template>
@@ -21,9 +21,9 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+.displayedcards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 </style>
