@@ -1,18 +1,21 @@
 {
     "app": {
       "title": "Kaffee",
-      "title1": "Artikel"
+      "title1": "Artikel",
+      "description": "Gesunde Lebensmittel",
+      "addToCart": "In den Warenkorb legen"
     },
     "nav": {
       "home": "Zuhause",
       "about": "Die Info",
       "shop": "Geschäft"
     },
-    "user_greeting": "Hallo, {name}",
-    "footer": "Gebaut mit Vue und Vue I18n {0} Angetrieben von Kaffee",
+    "user_greeting": "herzlich willkommen, {name}",
+    "footer": "Internationalisierung der Demo-Web-App",
+    "cartItems": "im Wagen",
+    "yourCart": "Ihr Warenkorb",
     "card": {
-      "added": "Hinzugefügt",
-      "likes": "Niemand ❤️ das noch 😕 | {n} Person ❤️ this | {n} Leute ❤️ das"
+      "added": "Hinzugefügt"
     },
     "about": {
       "title": "Über uns",

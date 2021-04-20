@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="container notification has-background-danger-light container-max-width-100px">
-    <h1 class="cartTitle">Your Cart</h1>
+    <h1 class="cartTitle">{{$t('yourCart')}}</h1>
     <div class="dingus">
       <h4 class="cart text-center box">total: {{$n(total(), "currency", changeLocale($i18n.locale))}}</h4>
       <div v-for="(prop, index) in cart" :key="index">

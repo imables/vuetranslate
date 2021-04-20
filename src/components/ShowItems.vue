@@ -6,7 +6,7 @@
       ></Shopping>
   </div>
   <div class="col-md-5 my-5">
-    {{cart.length}} in cart
+    {{$n(cart.length, "number", changeLocale($i18n.locale))}} {{$t('cartItems')}}
     <br />
         <Cart class="cart1" v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
   </div>
@@ -63,12 +63,11 @@ export default {
 
 }
 
-.cart1{
+/* .cart1{
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   float: left;
   margin: 0 auto;
-}
+} */
 
 </style>

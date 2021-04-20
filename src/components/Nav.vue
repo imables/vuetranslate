@@ -31,7 +31,7 @@ export default {
   text-align: center;
   padding: 1rem;
   color: rgb(0, 0, 0);
-  background-color: #aeff9e;
+  background-color: #e2ffdc;
 }
 
 .nav__start,

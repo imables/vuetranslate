@@ -8,7 +8,7 @@
         <div card card-content content>
         <h3 class="pl-5">{{$t('app.title1')}}</h3>
         <div class="cost pl-5">{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
-        <button class="buttons button is-warning is-light" v-on:click="addItemToCart(prop)">Add to cart</button>
+        <button class="buttons button is-warning is-light" v-on:click="addItemToCart(prop)">{{$t('app.addToCart')}}</button>
         </div>
       </div>
     </div>

@@ -2,14 +2,16 @@
   "app": {
     "title": "السلة الغذائية",
     "title1": "منتجاتنا",
-    "description": "أغذية صحية"
+    "description": "أغذية صحية",
+    "addToCart": "أضف إلى السلة"
   },
   "nav": {
     "home": "الرئيسية",
-    "about": "نبذة عنا"
+    "about": "نبذة عنا",
+    "shop": "محل"
   },
-  "user_greeting": "مرحبا {name}",
-  "footer": "بنيت بواسطة Vue و Vue I18n{0}مدعوم من كمية قهوة مبالغ فيها",
+  "user_greeting": "أهلا بك {name}",
+  "footer": "تدويل تطبيق الويب التجريبي",
   "card": {
     "added": "تم إضافته"
   },

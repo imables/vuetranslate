@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about card card-content content">
     <h1>{{$t("about.title")}}</h1>
 
     <p>{{$t("about.para1")}}</p>

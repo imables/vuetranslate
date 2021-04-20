@@ -2,15 +2,16 @@
   "app": {
     "title": "The Food Basket",
     "title1": "Item",
-    "description": "Healthy Foods"
+    "description": "Healthy Foods",
+    "addToCart": "Add to cart"
   },
   "nav": {
     "home": "Home",
     "about": "Info",
     "shop": "Shop"
   },
-  "user_greeting": "Hello, {name}",
-  "footer": "Demo web app internationalisation",
+  "user_greeting": "Welcome, {name}",
+  "footer": "Demo web app internatioalisation",
   
   "about": {
     "title": "About Us",
