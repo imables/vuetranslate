@@ -1,36 +1,21 @@
-let defaultChoiceIndex
+let baseIndex
 
-export function setDefaultChoiceIndexGet(fn) {
-  defaultChoiceIndex = fn
+export function setDefaultIndex(fn) {
+  baseIndex = fn
 }
 
-/**
- * @param choice {number} a choice index given by the input to
- *   $tc: `$tc('path.to.rule', choiceIndex)`
- * @param choicesLength {number} an overall amount of available choices
- * @returns a final choice index to select plural word by
- **/
-export function getChoiceIndex(choice, choicesLength) {
-  if (defaultChoiceIndex === undefined) {
-    return choice
+export function getChoiceIndex(langChoice, langChoicesLength) {
+  if (baseIndex === undefined) {
+    return langChoice
   }
-
-  // this === VueI18n instance, so the locale property also exists here
   if (this.locale !== "ar" || "de") {
-    return defaultChoiceIndex.apply(this, [choice, choicesLength])
-  }
-
-  if ([0, 1, 2].includes(choice)) {
-    return choice
-  }
-
-  if (3 <= choice && choice <= 10) {
+    return baseIndex.apply(this, [langChoice, langChoicesLength])
+  } else if ([0, 1, 2].includes(langChoice)) {
+    return langChoice
+  } else if (3 <= langChoice && langChoice <= 8) {
     return 3
-  }
-
-  if (11 <= choice && choice <= 99) {
+  } else if (11 <= langChoice && langChoice <= 12) {
     return 4
   }
-
   return 5
 }

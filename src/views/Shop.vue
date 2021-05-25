@@ -1,6 +1,6 @@
 <template>
   <div class="shop">
-    <h1 v-t="'app.title'" />
+    <h1 v-t="'application.title'" />
   
     <ShowItems />
   </div>

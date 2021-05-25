@@ -1,18 +1,18 @@
-import supportedLocales from "@/config/supported-locales"
+import available from "@/config/availableLocales"
 
-export function getSupportedLocales() {
-  let annotatedLocales = []
+export function getAllAvailableLocales() {
+  let theLocales = []
 
-  for (const code of Object.keys(supportedLocales)) {
-    annotatedLocales.push({
+  for (const code of Object.keys(available)) {
+    theLocales.push({
       code,
-      name: supportedLocales[code]
+      name: available[code]
     })
   }
 
-  return annotatedLocales
+  return theLocales
 }
 
 export function supportedLocalesInclude(locale) {
-  return Object.keys(supportedLocales).includes(locale)
+  return Object.keys(available).includes(locale)
 }

@@ -1,4 +1,4 @@
-export default function getBrowserLocale(options = {}) {
+export default function getLocaleBrowser(options = {}) {
   const defaultOptions = { countryCodeOnly: false }
 
   const opt = { ...defaultOptions, ...options }

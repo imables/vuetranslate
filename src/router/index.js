@@ -1,8 +1,8 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Home from "../views/Home.vue"
 import Root from "./Root"
-import i18n, { loadLocaleMessagesAsync } from "@/i18n"
+import Homepage from "../views/Homepage.vue"
+import i18n, { asyncLocale } from "@/i18n"
 import {
   setDocumentDirectionPerLocale,
   setDocumentLang,
@@ -24,26 +24,20 @@ const routes = [
     children: [
       {
         path: "",
-        name: "home",
-        component: Home
+        name: "homepage",
+        component: Homepage
       },
       {
-        path: "about",
-        name: "about",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        path: "information",
+        name: "information",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/About.vue")
+          import("../views/Information.vue")
       },
       {
         path: "shop",
         name: "shop",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/Shop.vue")
+          import("../views/Shop.vue")
       }
     ]
   }
@@ -63,12 +57,12 @@ router.beforeEach((to, from, next) => {
 
   const { locale } = to.params
 
-  loadLocaleMessagesAsync(locale).then(() => {
+  asyncLocale(locale).then(() => {
     setDocumentLang(locale)
 
     setDocumentDirectionPerLocale(locale)
 
-    setDocumentTitle(i18n.t("app.title"))
+    setDocumentTitle(i18n.t("application.title"))
   })
 
   next()

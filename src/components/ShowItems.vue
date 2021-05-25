@@ -6,7 +6,8 @@
       ></Shopping>
   </div>
   <div class="col-md-5 my-5">
-    {{$n(cart.length, "number", changeLocale($i18n.locale))}} {{$t('cartItems')}}
+    {{$n(cart.length, "number", changeLocale($i18n.locale))}} {{$t('cartItems')}}  
+    
     <br />
         <Cart class="cart1" v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
   </div>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import i18n from "@/i18n"
 import Cart from "@/components/Cart.vue";
 import Shopping from "./Shopping"
 

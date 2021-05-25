@@ -6,9 +6,9 @@
       
       <div v-for="(prop, index) in items" :key="index">
         <div card card-content content>
-        <h3 class="pl-5">{{$t('app.title1')}}</h3>
+        <h3 class="pl-5">{{$t('application.title1')}}</h3>
         <div class="cost pl-5">{{$n(prop.price, "currency", changeLocale($i18n.locale))}}</div>
-        <button class="buttons button is-warning is-light" v-on:click="addItemToCart(prop)">{{$t('app.addToCart')}}</button>
+        <button class="buttons button is-warning is-light" v-on:click="addItemToCart(prop)">{{$t('application.addToCart')}}</button>
         </div>
       </div>
     </div>
@@ -65,11 +65,6 @@ export default {
 
 <style>
 
-/* .products {
-  float: left;
-  margin: 0 auto;
-  font-size: 15px;
-} */
 
 .line {
   display: block;

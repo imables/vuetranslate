@@ -1,22 +1,26 @@
 {
-  "app": {
-    "title": "The Food Basket",
+  "application": {
+    "title": "FoodShop",
     "title1": "Item",
     "description": "Healthy Foods",
-    "addToCart": "Add to cart"
+    "addToCart": "Add to cart",
+    "removeFromCart": "Remove Item"
   },
-  "nav": {
-    "home": "Home",
-    "about": "Info",
+  "navBar": {
+    "homepage": "Home",
+    "information": "Info",
     "shop": "Shop"
   },
-  "user_greeting": "Welcome, {name}",
-  "footer": "Demo web app internatioalisation",
+  "nameUser": "Your Profile: {name}",
+  "footer": "Internationalisation Vue Application",
+  "cartItems": "Items",
+  "yourCart": "Your Cart",
+    "card": {
+      "added": "Add items"
+    },
   
   "about": {
-    "title": "About Us",
-    "para1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nobis sapiente quos officia vitae. Minus blanditiis doloremque error at consectetur magni nam voluptatem pariatur! Itaque deleniti delectus odio accusantium quas?",
-    "para2": "Non eius beatae dolorum impedit enim repudiandae nulla ipsum animi. Ullam qui libero possimus aliquam, praesentium ipsam omnis, ab aut culpa reprehenderit odio sapiente ex molestias maiores? Temporibus, molestiae eum!",
-    "para3": "Consectetur illo nobis, nemo necessitatibus quos corporis voluptates enim totam itaque ratione et ad iste corrupti eaque ex quas commodi. Perspiciatis vel quo consectetur quas nulla explicabo harum ratione consequatur."
+    "pageTitle": "Product Info",
+    "paragraph": "This is a photography website. We sell sky photographs in both hard copy, and digital format. If you would like to buy a photograph please find the checkout page which will prompt you with some items that are purchasable. Thankyou for visiting our website!"
   }
 }

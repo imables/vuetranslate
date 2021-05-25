@@ -4,95 +4,69 @@ import getBrowserLocale from "@/util/i18n/get-browser-locale"
 import { supportedLocalesInclude } from "./util/i18n/supported-locales"
 import {
   getChoiceIndex,
-  setDefaultChoiceIndexGet
+  setDefaultIndex
 } from "./util/i18n/choice-index-for-plural"
-import dateTimeFormats from "@/locales/date-time-formats"
-import numberFormats from "@/locales/number-formats"
+import numberFormats from "@/locales/numbers"
+import dateTimeFormats from "@/locales/dates"
 import EventBus from "@/EventBus"
 
 Vue.use(VueI18n)
 
-// function loadLocaleMessages() {
-//   const locales = require.context(
-//     "./locales",
-//     true,
-//     /[A-Za-z0-9-_,\s]+\.json$/i
-//   )
-//   const messages = {}
-//   locales.keys().forEach(key => {
-//     const matched = key.match(/([A-Za-z0-9-_]+)\./i)
-//     if (matched && matched.length > 1) {
-//       const locale = matched[1]
-//       messages[locale] = locales(key)
-//     }
-//   })
-//   return messages
-// }
+function getInitialLocale() {
+  const localeBrowser = getBrowserLocale({ countryCodeOnly: true })
 
-function getStartingLocale() {
-  const browserLocale = getBrowserLocale({ countryCodeOnly: true })
-
-  if (supportedLocalesInclude(browserLocale)) {
-    return browserLocale
+  if (supportedLocalesInclude(localeBrowser)) {
+    return localeBrowser
   } else {
     return process.env.VUE_APP_I18N_LOCALE || "en"
   }
-  
-
 }
 
 
-//  function getDefaultFullyQualifiedLocaleFor(countryCode) {
-//   if (countryCode === "ar") { return "ar-EG"; }
-//   else return "en-US";
-//   } 
-
-setDefaultChoiceIndexGet(VueI18n.prototype.getChoiceIndex)
+setDefaultIndex(VueI18n.prototype.getChoiceIndex)
 
 VueI18n.prototype.getChoiceIndex = getChoiceIndex
 
-// const defaultLocale = getDefaultFullyQualifiedLocaleFor()
 
-const startingLocale = getStartingLocale()
+const initialLocale = getInitialLocale()
 
 export const i18n = new VueI18n({
-  locale: startingLocale, 
+  locale: initialLocale, 
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   messages: {},
-  // messages: loadLocaleMessages()
   dateTimeFormats,
   numberFormats
 })
 
 
-const loadedLanguages = []
+const languagesInitialised = []
 
-export function loadLocaleMessagesAsync(locale) {
+export function asyncLocale(locale) {
   EventBus.$emit("i18n-load-start")
 
-  if (loadedLanguages.length > 0 && i18n.locale === locale) {
-    EventBus.$emit("i18n-load-complete")
+  if (languagesInitialised.length > 0 && i18n.locale === locale) {
+    EventBus.$emit("i18n-initialised")
     return Promise.resolve(locale)
   }
 
-  // If the language was already loaded
-  if (loadedLanguages.includes(locale)) {
+  
+  if (languagesInitialised.includes(locale)) {
     i18n.locale = locale
     EventBus.$emit("i18n-load-complete")
     return Promise.resolve(locale)
   }
 
-  // If the language hasn't been loaded yet
+  
   return import(
-    /* webpackChunkName: "locale-[request]" */ `@/locales/${locale}.json`
+     `@/locales/${locale}.json`
   ).then(messages => {
     i18n.setLocaleMessage(locale, messages.default)
 
-    loadedLanguages.push(locale)
+    languagesInitialised.push(locale)
 
     i18n.locale = locale
 
-    EventBus.$emit("i18n-load-complete")
+    EventBus.$emit("i18n-loaded")
     return Promise.resolve(locale)
   })
 }
